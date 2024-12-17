@@ -15,23 +15,33 @@
 ---------------------------------------------
 
 ##### Build
-> docker-compose up -d --build
+```bash
+docker-compose up -d --build
+```
 
-- Permission CMD
-> sudo chmod 777 -R postgresql
+##### Permission CMD
+```bash
+sudo chmod 777 -R postgresql
+```
 
 ---------------------------------------------
 
 ### Laravel
 
-- Install
-> docker exec -it app composer create-project laravel/laravel laravel
+##### Install
+```bash
+docker exec -it app composer create-project laravel/laravel laravel
+```
 
-- Copy .env file
->  docker exec -it app cp .env.example .env
+##### Copy .env file
+```bash
+docker exec -it app cp .env.example .env
+```
 
-- Key Generate
-> docker exec -it app php artisan key:generate
+##### Key Generate
+```bash
+docker exec -it app php artisan key:generate
+```
 
 ### Laravel Task
 
