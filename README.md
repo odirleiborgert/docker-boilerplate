@@ -5,11 +5,11 @@
 - Laravel
   - Task
   - Queue
-- Postgres 13
+- Postgres
 - Mysql
 - Phpmyadmin
 - Redis
-- ElasticSearch 8.5
+- ElasticSearch
 - Mailhog
 
 ---------------------------------------------
