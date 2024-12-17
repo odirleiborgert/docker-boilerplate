@@ -30,17 +30,17 @@ sudo chmod 777 -R postgresql
 
 ##### Install
 ```bash
-docker exec -it app composer create-project laravel/laravel laravel
+docker exec -it laravel composer install
 ```
 
 ##### Copy .env file
 ```bash
-docker exec -it app cp .env.example .env
+docker exec -it laravel cp .env.example .env
 ```
 
 ##### Key Generate
 ```bash
-docker exec -it app php artisan key:generate
+docker exec -it laravel php artisan key:generate
 ```
 
 ### Laravel Task
