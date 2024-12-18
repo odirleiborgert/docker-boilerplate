@@ -1,13 +1,25 @@
-FROM php:8.3.10
-RUN apt-get update -y && apt-get install -y openssl zip unzip git
+FROM php:8.3-fpm
+
+# Instala pacotes necessários
+RUN apt-get update -y && \
+    apt-get install -y \
+    openssl \
+    zip \
+    unzip \
+    git \
+    libpq-dev \
+    libonig-dev \
+    libzip-dev \
+    mariadb-client
+
+# Instala extensões PHP necessárias para MySQL e PostgreSQL
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip
+
+# Instala o Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN apt-get update && apt-get install -y libpq-dev
-RUN docker-php-ext-install pdo pdo_pgsql
 
-RUN php -m | grep mbstring
-WORKDIR /app
-COPY . /app
-RUN composer install
+# Definir o diretório de trabalho dentro do container
+WORKDIR /var/www/html
 
-CMD php artisan serve --host=0.0.0.0 --port=8000
-EXPOSE 8000
+# Expõe a porta 8000
+EXPOSE 9000
