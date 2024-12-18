@@ -2,15 +2,16 @@
 
 ## Docker Boilerplate
 
-- Laravel
-  - Task
-  - Queue
-- Postgres
-- Mysql
-- Phpmyadmin
-- Redis
-- ElasticSearch
-- Mailhog
+1. [Laravel](#laravel)
+2. [Laravel Task](#laravel-task)
+3. [Laravel Queue](#laravel-queue)
+4. [Postgres](#postgres)
+5. [Mysql](#mysql)
+6. [Phpmyadmin](#phpmyadmin)
+7. [Redis](#redis)
+8. [MongoDB](#mongodb)
+9. [ElasticSearch](#elasticsearch)
+10. [Mailhog](#mailhog)
 
 ---------------------------------------------
 
@@ -19,14 +20,11 @@
 docker-compose up -d --build
 ```
 
-##### Permission CMD
 ```bash
-sudo chmod 777 -R postgresql
+docker exec -it laravel php -v
 ```
 
----------------------------------------------
-
-### Laravel
+## Laravel
 
 ##### Install
 ```bash
@@ -43,43 +41,42 @@ docker exec -it laravel cp .env.example .env
 docker exec -it laravel php artisan key:generate
 ```
 
-### Laravel Task
+## Laravel Task
 
-### Laravel Queue
+## Laravel Queue
 
-### Mongodb
+## Mongodb
 
-### Postgres
+## Postgres
 
-### Redis
+## Redis
 
-### Mysql
+## Mysql
 
-### Phpmyadmin
+## Phpmyadmin
 - http://localhost:8081/
 - user: root
-- password: password
+- password: root
 
-### ElasticSearch
+## ElasticSearch
 
 - Elasticvue
   - Extension for ElasticSearch
   - https://chromewebstore.google.com/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa
 
 
-### Mailhog
+## Mailhog
 - http://localhost:8025/
 - https://github.com/mailhog/MailHog
 - Change this to .env file
-
-```env
-MAIL_MAILER=smtp
-MAIL_HOST=mailhog
-MAIL_PORT=1025
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-```
+  ```env
+  MAIL_MAILER=smtp
+  MAIL_HOST=mailhog
+  MAIL_PORT=1025
+  MAIL_USERNAME=null
+  MAIL_PASSWORD=null
+  MAIL_ENCRYPTION=null
+  ```
 
 
 ## TODO
@@ -94,6 +91,5 @@ MAIL_ENCRYPTION=null
 - Vue
 - React
 - React Native
-
 
 -  https://github.com/docker/awesome-compose
