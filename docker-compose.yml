@@ -5,7 +5,7 @@ services:
     laravel:
         build:
             context: .
-            dockerfile: Dockerfile_
+            dockerfile: Dockerfile
         container_name: laravel
         restart: unless-stopped
         tty: true
@@ -32,7 +32,7 @@ services:
     laravel_task:
         build:
             context: .
-            dockerfile: Dockerfile_
+            dockerfile: Dockerfile
         container_name: laravel_task
         command: [ "php", "/var/www/artisan", "schedule:work" ]
         volumes:
@@ -43,7 +43,7 @@ services:
     laravel_queue:
         build:
             context: .
-            dockerfile: Dockerfile_
+            dockerfile: Dockerfile
         container_name: laravel_queue
         command: [ "php", "/var/www/artisan", "queue:work" ]
         volumes:
@@ -82,7 +82,7 @@ services:
         restart: unless-stopped
         tty: true
         volumes:
-            - ./postgresql/data:/var/lib/postgresql/data
+            - postgresdata:/var/lib/postgresql/data
         ports:
             - "5430:5432"
         environment:
@@ -156,7 +156,7 @@ services:
             - docker-network
 
 volumes:
-    dbdata:
+    postgresdata:
         driver: local
     elasticdata:
         driver: local
