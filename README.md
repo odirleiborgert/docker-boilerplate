@@ -110,6 +110,7 @@ docker exec -it vue npm install
 - Laravel Warden
 - Laravel Reverb
 - Laravel Telescope
+- Laravel Pulse
 - React
 - React Native
 
