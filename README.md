@@ -97,15 +97,10 @@ docker exec -it vue npm install
 -  http://localhost:5173
 
 ## TODO
-- Healthchecks.io
-- Inspector.dev
-- Sentry or Bugsnag
 - Kafka or Rabbitmq
-- Portainer
 - Laravel Warden
 - Laravel Reverb
 - Laravel Telescope
 - React
 - React Native
 
--  https://github.com/docker/awesome-compose
