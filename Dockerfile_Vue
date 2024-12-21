@@ -1,0 +1,24 @@
+# Use a imagem do Node.js 20 como base
+FROM node:20-alpine
+
+# Crie uma variável de ambiente para a API
+ARG VUE_APP_API_URL
+ENV VUE_APP_API_URL ${VUE_APP_API_URL}
+
+# Defina o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copie o package.json e o package-lock.json para instalar as dependências
+COPY ./vue/package*.json ./
+
+# Instale as dependências do projeto
+RUN npm install
+
+# Copie o restante dos arquivos da aplicação para dentro do container
+COPY ./vue/ .
+
+# Exponha a porta padrão do servidor de desenvolvimento (Vite utiliza por padrão a porta 5173, ou você pode configurar para 3000)
+EXPOSE 5173
+
+# Comando para iniciar a aplicação em desenvolvimento
+CMD ["npm", "run", "dev", "--", "--host"]

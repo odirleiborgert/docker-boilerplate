@@ -12,6 +12,7 @@
 8. [MongoDB](#mongodb)
 9. [ElasticSearch](#elasticsearch)
 10. [Mailhog](#mailhog)
+11. [Vue with Vite](#vue-with-vite)
 
 ---------------------------------------------
 
@@ -22,6 +23,10 @@ docker-compose up -d --build
 
 ```bash
 docker exec -it laravel php -v
+```
+
+```bash
+docker exec -it vue logs
 ```
 
 ## Laravel
@@ -77,7 +82,19 @@ docker exec -it laravel php artisan key:generate
   MAIL_PASSWORD=null
   MAIL_ENCRYPTION=null
   ```
+  
+## Vue with Vite
 
+#### Create a new project
+```bash
+docker exec -it vue npm create vite@latest ./ --template vue
+```
+
+```bash
+docker exec -it vue npm install
+```
+
+-  http://localhost:5173
 
 ## TODO
 - Healthchecks.io
@@ -88,7 +105,6 @@ docker exec -it laravel php artisan key:generate
 - Laravel Warden
 - Laravel Reverb
 - Laravel Telescope
-- Vue
 - React
 - React Native
 
