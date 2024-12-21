@@ -67,12 +67,12 @@ docker exec -it laravel php artisan key:generate
 
 - Elasticvue
   - Extension for ElasticSearch
-  - https://chromewebstore.google.com/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa
+  - Install from https://chromewebstore.google.com/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa
 
 
 ## Mailhog
 - http://localhost:8025/
-- https://github.com/mailhog/MailHog
+- Documentation https://github.com/mailhog/MailHog
 - Change this to .env file
   ```env
   MAIL_MAILER=smtp
