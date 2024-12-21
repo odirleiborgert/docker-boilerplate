@@ -107,11 +107,17 @@ docker exec -it laravel php artisan key:generate
 docker exec -it vue npm create vite@latest ./ --template vue
 ```
 
+#### Install dependencies
 ```bash
 docker exec -it vue npm install
 ```
 
 -  http://localhost:5173
+
+<br>
+<br>
+<br>
+<br>
 
 ## TODO
 - Kafka or Rabbitmq
