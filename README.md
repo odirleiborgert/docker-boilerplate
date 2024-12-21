@@ -16,22 +16,31 @@
 
 ---------------------------------------------
 
-##### Build
+##### Build and start the containers
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
+#### Stop the containers
+```bash
+docker compose down
+```
+
+#### Execute a command in a container
 ```bash
 docker exec -it laravel php -v
 ```
 
+#### Show the logs
 ```bash
-docker exec -it vue logs
+docker logs -f [container_name]
 ```
+
+---------------------------------------------
 
 ## Laravel
 
-##### Install
+##### Install composer
 ```bash
 docker exec -it laravel composer install
 ```
@@ -83,7 +92,7 @@ docker exec -it laravel php artisan key:generate
   MAIL_ENCRYPTION=null
   ```
   
-## Vue with Vite
+## Vue
 
 #### Create a new project
 ```bash
