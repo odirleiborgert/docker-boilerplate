@@ -9,10 +9,11 @@
 5. [Mysql](#mysql)
 6. [Phpmyadmin](#phpmyadmin)
 7. [Redis](#redis)
-8. [MongoDB](#mongodb)
-9. [ElasticSearch](#elasticsearch)
-10. [Mailhog](#mailhog)
-11. [Vue with Vite](#vue-with-vite)
+8. [RedisInsight](#redisinsight)
+9. [MongoDB](#mongodb)
+10. [ElasticSearch](#elasticsearch)
+11. [Mailhog](#mailhog)
+12. [Vue with Vite](#vue-with-vite)
 
 ---------------------------------------------
 
@@ -64,6 +65,13 @@ docker exec -it laravel php artisan key:generate
 ## Postgres
 
 ## Redis
+
+## RedisInsight
+- http://localhost:5540
+- Host: redis
+- Port: 6379
+- Username: default
+- Password: null
 
 ## Mysql
 
