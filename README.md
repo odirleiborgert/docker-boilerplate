@@ -31,7 +31,7 @@ docker compose down
 docker exec -it laravel php -v
 ```
 
-#### Show the logs
+#### Show the logs of a container
 ```bash
 docker logs -f [container_name]
 ```
