@@ -92,7 +92,7 @@ docker exec -it laravel php artisan key:generate
   MAIL_ENCRYPTION=null
   ```
   
-## Vue
+## Vue with Vite
 
 #### Create a new project
 ```bash
