@@ -58,6 +58,25 @@ docker exec -it laravel php artisan key:generate
 
 ## Laravel Task
 
+#### Check logs
+```bash
+docker logs -f laravel_task
+```
+
+
+#### Permission do artisan
+```bash
+docker exec -it laravel_task sh
+```
+```bash
+chmod +x /var/www/artisan
+```
+
+#### Execute manual
+```bash
+docker exec -it laravel_task php /var/www/artisan schedule:work
+```
+
 ## Laravel Queue
 
 ## Mongodb
