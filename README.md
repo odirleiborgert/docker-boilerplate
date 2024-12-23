@@ -5,15 +5,16 @@
 1. [Laravel](#laravel)
 2. [Laravel Task](#laravel-task)
 3. [Laravel Queue](#laravel-queue)
-4. [Postgres](#postgres)
-5. [Mysql](#mysql)
-6. [Phpmyadmin](#phpmyadmin)
-7. [Redis](#redis)
-8. [RedisInsight](#redisinsight)
-9. [MongoDB](#mongodb)
-10. [ElasticSearch](#elasticsearch)
-11. [Mailhog](#mailhog)
-12. [Vue with Vite](#vue-with-vite)
+4. [Laravel Pulse](#laravel-pulse)
+5. [Postgres](#postgres)
+6. [Mysql](#mysql)
+7. [Phpmyadmin](#phpmyadmin)
+8. [Redis](#redis)
+9. [RedisInsight](#redisinsight)
+10. [MongoDB](#mongodb)
+11. [ElasticSearch](#elasticsearch)
+12. [Mailhog](#mailhog)
+13. [Vue with Vite](#vue-with-vite)
 
 ---------------------------------------------
 
@@ -79,6 +80,10 @@ docker exec -it laravel_task php /var/www/artisan schedule:work
 
 ## Laravel Queue
 
+## Laravel Pulse
+- First register user in http://localhost:8080/register
+- http://localhost:8080/pulse
+
 ## Mongodb
 
 ## Postgres
@@ -143,7 +148,6 @@ docker exec -it vue npm install
 - Laravel Warden
 - Laravel Reverb
 - Laravel Telescope
-- Laravel Pulse
 - React
 - React Native
 
