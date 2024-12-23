@@ -105,7 +105,9 @@ docker logs -f laravel_que
 ```php
 use Illuminate\Support\Facades\Redis;
 
-// Set Array
+ $expiration = 60;
+
+// Data to be stored
 $data = [
     'key1' => 'value1',
     'key2' => 'value2',
@@ -114,9 +116,9 @@ $data = [
 
 Redis::mset($data);
 
-// Set Single
+// Set time expiration
 foreach ($data as $key => $value) {
-    Redis::set($key, $value);
+    Redis::expire($key, $expiration);
 }
 
 // Get value
