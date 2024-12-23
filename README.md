@@ -102,6 +102,8 @@ docker logs -f laravel_que
 
 ## Redis
 
+- Example http://localhost:8080/redis
+
 ```php
 use Illuminate\Support\Facades\Redis;
 
