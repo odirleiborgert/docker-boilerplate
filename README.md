@@ -150,8 +150,8 @@ Redis::get('key1');
 
 
 ## Mailhog
-- http://localhost:8025/
-- Documentation https://github.com/mailhog/MailHog
+- View mails http://localhost:8025/
+- Emulate example mail http://localhost:8080/mailhog
 - Change this to .env file
   ```env
   MAIL_MAILER=smtp

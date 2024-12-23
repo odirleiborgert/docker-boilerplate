@@ -27,5 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/redis', [App\Http\Controllers\Examples\RedisController::class, 'index'])->name('redis');
 Route::get('/redis/show', [App\Http\Controllers\Examples\RedisController::class, 'show'])->name('redis-show');
 
+Route::get('/mailhog', [App\Http\Controllers\Examples\MailhogController::class, 'index'])->name('mailhog');
+
 
 
