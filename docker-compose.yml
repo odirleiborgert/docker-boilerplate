@@ -13,7 +13,7 @@ services:
             SERVICE_TAGS: dev
         working_dir: /var/www
         volumes:
-            - ./laravel:/var/www
+            - ./laravel:/var/www:cached
             - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
         networks:
             - docker-network
@@ -38,7 +38,7 @@ services:
         depends_on:
             -   laravel
         volumes:
-            - ./laravel:/var/www
+            - ./laravel:/var/www:cached
             - ./laravel/node_modules:/node_modules
         ports:
             - "5173:5173"
@@ -57,7 +57,7 @@ services:
             -   laravel
         command: [ "php", "artisan", "schedule:work" ]
         volumes:
-            - ./laravel:/var/www
+            - ./laravel:/var/www:cached
         networks:
             - docker-network
 
@@ -75,7 +75,7 @@ services:
             - mysql
             - mailhog
         volumes:
-            - ./laravel:/var/www
+            - ./laravel:/var/www:cached
         networks:
             - docker-network
 
@@ -88,7 +88,7 @@ services:
             - "8080:80"
             - "443:443"
         volumes:
-            - ./laravel:/var/www
+            - ./laravel:/var/www:cached
             - ./nginx/conf.d/:/etc/nginx/conf.d/
         networks:
             - docker-network
@@ -207,7 +207,7 @@ services:
             args:
                 VUE_APP_API_URL: http://localhost:8080
         volumes:
-            - ./vue:/app
+            - ./vue:/app:cached
             - ./vue:/node_modules
         ports:
             - "3000:5173"
