@@ -18,6 +18,12 @@
 
 ---------------------------------------------
 
+##### Permissions path
+```bash
+chmod -R u+w laravel
+chmod -R u+w vue
+```
+
 ##### Build and start the containers
 ```bash
 docker compose up -d --build
