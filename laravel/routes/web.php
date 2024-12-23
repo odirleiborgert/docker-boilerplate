@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,3 +23,9 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/redis', [App\Http\Controllers\Examples\RedisController::class, 'index'])->name('redis');
+Route::get('/redis/show', [App\Http\Controllers\Examples\RedisController::class, 'show'])->name('redis-show');
+
+
+

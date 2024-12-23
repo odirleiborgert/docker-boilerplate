@@ -86,6 +86,12 @@ docker exec -it laravel_task php /var/www/artisan schedule:work
 
 ## Laravel Queue
 
+#### Check logs
+```bash
+docker logs -f laravel_que
+```
+
+
 ## Laravel Pulse
 - First register user in http://localhost:8080/register
 - http://localhost:8080/pulse
@@ -95,6 +101,28 @@ docker exec -it laravel_task php /var/www/artisan schedule:work
 ## Postgres
 
 ## Redis
+
+```php
+use Illuminate\Support\Facades\Redis;
+
+// Set Array
+$data = [
+    'key1' => 'value1',
+    'key2' => 'value2',
+    'key3' => 'value3',
+];
+
+Redis::mset($data);
+
+// Set Single
+foreach ($data as $key => $value) {
+    Redis::set($key, $value);
+}
+
+// Get value
+Redis::get('key1');
+
+```
 
 ## RedisInsight
 - http://localhost:5540

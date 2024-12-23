@@ -18,6 +18,9 @@ RUN apt-get update -y && \
 # Instala extensões PHP necessárias para MySQL e PostgreSQL
 RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip
 
+# Instala a extensão phpredis
+RUN pecl install redis && docker-php-ext-enable redis
+
 # Instala o Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -31,4 +34,3 @@ WORKDIR /var/www
 
 # Expõe a porta 9000
 EXPOSE 9000
-
