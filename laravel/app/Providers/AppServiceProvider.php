@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Jobs\ProcessSendMailJob;
+use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Pulse\Facades\Pulse;
@@ -23,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Gate::define('viewPulse', function (User $user) {
-            return $user->isAdmin();
+            return $user;
         });
 
         Pulse::user(fn ($user) => [

@@ -1,0 +1,16 @@
+FROM node:20-alpine
+
+# Define o diretório de trabalho
+WORKDIR /var/www
+
+# Copie o package.json e o package-lock.json para instalar as dependências
+COPY ./laravel/package*.json ./
+
+# Instale as dependências do projeto
+RUN npm install
+
+# Copie o restante dos arquivos da aplicação para dentro do container
+COPY ./laravel/ .
+
+# Expõe a porta usada pelo Vite
+EXPOSE 5173

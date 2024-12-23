@@ -4,8 +4,20 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                'resources/sass/app.scss',
+                'resources/js/app.js',
+            ],
             refresh: true,
         }),
     ],
+    server: {
+        host: '0.0.0.0', // Permite que o servidor seja acessado por qualquer interface de rede
+        port: 5173,      // Porta padrão do Vite
+        strictPort: true, // Garante que o Vite use a porta especificada
+        hmr: {
+            host: 'localhost', // Define o host para hot module reload (HMR)
+            port: 5173,        // Porta usada pelo HMR
+        },
+    },
 });

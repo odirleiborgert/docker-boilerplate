@@ -18,8 +18,6 @@ services:
         networks:
             - docker-network
         depends_on:
-            - laravel_task
-            - laravel_queue
             - postgres
             - nginx
             - mailhog
@@ -27,6 +25,25 @@ services:
             - mongodb
             - mysql
             - phpmyadmin
+
+    laravel_vite:
+        build:
+            context: .
+            dockerfile: Dockerfile_Laravel_Vite
+        container_name: laravel_vite
+        restart: unless-stopped
+        tty: true
+        working_dir: /var/www
+        command: [ "npm", "run", "dev" ,"--","--host"]
+        depends_on:
+            -   laravel
+        volumes:
+            - ./laravel:/var/www
+            - ./laravel/node_modules:/node_modules
+        ports:
+            - "5173:5173"
+        networks:
+            - docker-network
 
     laravel_task:
         build:
@@ -36,6 +53,8 @@ services:
             - ./laravel/.env
         container_name: laravel_task
         working_dir: /var/www
+        depends_on:
+            -   laravel
         command: [ "php", "artisan", "schedule:work" ]
         volumes:
             - ./laravel:/var/www
@@ -51,6 +70,10 @@ services:
         working_dir: /var/www
         container_name: laravel_queue
         command: [ "php", "artisan", "queue:work" ]
+        depends_on:
+            - laravel
+            - mysql
+            - mailhog
         volumes:
             - ./laravel:/var/www
         networks:
@@ -187,7 +210,7 @@ services:
             - ./vue:/app
             - ./vue:/node_modules
         ports:
-            - "5173:5173"
+            - "3000:5173"
         depends_on:
             - laravel
         networks:
