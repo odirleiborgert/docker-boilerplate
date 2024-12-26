@@ -148,6 +148,9 @@ Redis::get('key1');
   - Extension for ElasticSearch
   - Install from https://chromewebstore.google.com/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa
 
+## Elastic Kibana
+
+- http://localhost:5601/
 
 ## Mailhog
 - View mails http://localhost:8025/
@@ -161,13 +164,20 @@ Redis::get('key1');
   MAIL_PASSWORD=null
   MAIL_ENCRYPTION=null
   ```
-  
-## Vue with Vite
 
-#### Create a new project
-```bash
-docker exec -it vue npm create vite@latest ./ --template vue
-```
+## Mailcatcher
+- View mails http://localhost:1080/
+- Change this to .env file
+  ```env
+  MAIL_MAILER=smtp
+  MAIL_HOST=mailcatcher
+  MAIL_PORT=1025
+  MAIL_USERNAME=null
+  MAIL_PASSWORD=null
+  MAIL_ENCRYPTION=null
+  ```
+
+## Vue with Vite
 
 #### Install dependencies
 ```bash

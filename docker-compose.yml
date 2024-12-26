@@ -21,7 +21,7 @@ services:
             - postgres
             - nginx
             - mailhog
-            - elasticsearch
+            - elastic_search
             - mongodb
             - mysql
             - phpmyadmin
@@ -181,7 +181,17 @@ services:
         networks:
             - docker-network
 
-    elasticsearch:
+    mailcatcher:
+        image: schickling/mailcatcher:latest
+        container_name: mailcatcher
+        ports:
+            - "1080:1080"  # Interface web do MailCatcher
+            - "1024:1025"  # Porta SMTP do MailCatcher
+        restart: unless-stopped
+        networks:
+            - docker-network
+
+    elastic_search:
         image: docker.elastic.co/elasticsearch/elasticsearch:8.5.3
         container_name: elasticsearch
         environment:
@@ -197,6 +207,19 @@ services:
             - "9200:9200"
         networks:
             - docker-network
+
+    elastic_kibana:
+        image: docker.elastic.co/kibana/kibana:8.5.3
+        container_name: kibana
+        environment:
+            - ELASTICSEARCH_HOSTS=http://elastic_search:9200
+        ports:
+            - "5601:5601"
+        depends_on:
+            - elastic_search
+        networks:
+            - docker-network
+
 
     vue:
         restart: unless-stopped
