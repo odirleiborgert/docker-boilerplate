@@ -14,7 +14,8 @@
 10. [MongoDB](#mongodb)
 11. [ElasticSearch](#elasticsearch)
 12. [Mailhog](#mailhog)
-13. [Vue with Vite](#vue-with-vite)
+13. [Mailcatcher](#mailcatcher)
+14. [Vue with Vite](#vue-with-vite)
 
 ---------------------------------------------
 
@@ -193,7 +194,6 @@ docker exec -it vue npm install
 
 ## TODO
 - Kafka or Rabbitmq
-- Laravel Warden
 - Laravel Reverb
 - Laravel Telescope
 - React
